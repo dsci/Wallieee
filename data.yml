@@ -1,0 +1,5 @@
+---
+  person:
+    name: "Hans"
+    lastname: "Mustermann"
+    age: 32
