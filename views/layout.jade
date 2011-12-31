@@ -2,10 +2,18 @@
 html
   head
     title= title
+    link(rel='stylesheet', href='http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/underscore-min.js')
     script(src='/javascripts/json2.js')
     script(src='/javascripts/handlebars-1.0.0.beta.4.js')
     script(src='/javascripts/jquery-1.7.1.min.js')
     script(src='/javascripts/backbone-min.js')
-  body!= body
+    script(src='/javascripts/app.js')
+  body
+  div.container
+    != body
+   
+    h3 The latest.
+    div.posts
+        ul#postList

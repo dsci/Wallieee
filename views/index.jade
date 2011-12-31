@@ -1,2 +1,10 @@
 h1= title
 p Welcome to #{title}
+
+form(action='/post', method='POST',id="messageForm", onsubmit="return false")
+	fieldset
+		legend Your message.
+		div.input
+			textarea.xxlarge(name="post[text]",id="message",rows="5")
+		div.actions
+			input.btn.primary(value="Say it!", id="submitPost",type="submit")
