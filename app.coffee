@@ -41,5 +41,7 @@ app.get('/posts', routes.posts)
 
 app.post('/posts', routes.create)
 
-app.listen(3000)
+port = process.env.PORT or 3000;
+app.listen(port)
+
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env)
