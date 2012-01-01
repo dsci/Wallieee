@@ -37,17 +37,9 @@ app.configure('production', ()->
 
 app.get('/', routes.index)
 
-app.get('/api', routes.api)
-
-app.get('/news',(req,res)->
-	res.render("news.jade",title: "test")
-)
-
 app.get('/posts', routes.posts)
 
-app.post('post',(req,res)->
-		
-)
+app.post('/posts', routes.create)
 
-app.listen(3000);
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+app.listen(3000)
+console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env)

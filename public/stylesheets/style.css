@@ -1,8 +1,28 @@
 body {
   padding: 50px;
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+
+  background-position: left 40px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /*background-color: blue;*/
+  color: #666666;
 }
 
 a {
   color: #00B7FF;
+}
+
+#recents ul{
+	margin-top:10px;
+}
+
+.messageRow{
+	font-weight:bold;
+	padding-bottom:10px;
+	padding-left:15px;
+}
+
+.messageRow:hover{
+	background-color:#F5F5F5;
 }

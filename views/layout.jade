@@ -16,4 +16,12 @@ html
    
     h3 The latest.
     div.posts
-        ul#postList
+        div#count
+        div#recents
+            ul#recents-list.unstyled
+        script(type="text/template",id="postList")
+            div.walltext
+        script(type="text/template",id="wallpostCount")
+            div.wallcount
+                <%= total %> messages in the list.   
+                

@@ -26,8 +26,11 @@ exports.api = (req,res) ->
 	
 exports.posts = (req,res)->
 	WallPost.find {}, (err,posts)->
-		console.log(post.text) for post in posts
+		#console.log(post.text) for post in posts
 		Response.json(res,posts)
 		
-	
-	
+exports.create = (req,res)->
+	post = new WallPost()
+	post.text = req.body.text
+	post.save (err)->
+		Response.json(res, {success:true}) unless err

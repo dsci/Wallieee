@@ -1,6 +1,7 @@
 h1= title
 p Welcome to #{title}
-
+div.alert-message.error(style="display:none", id="errorAlert")
+	| Oh snap! Type in a message and try again.
 form(action='/post', method='POST',id="messageForm", onsubmit="return false")
 	fieldset
 		legend Your message.
