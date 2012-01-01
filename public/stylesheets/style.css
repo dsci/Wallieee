@@ -21,6 +21,11 @@ a {
 	font-weight:bold;
 	padding-bottom:10px;
 	padding-left:15px;
+	margin-top:10px;
+	border-bottom:1px solid #cccccc;
+	border-left:2px solid #cccccc;
+	font-size:0.9em;
+	padding-top:5px;
 }
 
 .messageRow:hover{
