@@ -1,0 +1,8 @@
+## Wallieee
+
+Walliiee is another playground application which was created to learn 
+some backbone.js basics. 
+
+A running demo is hosted at [Heroku](http://wallieee.herokuapp.com/). 
+
+

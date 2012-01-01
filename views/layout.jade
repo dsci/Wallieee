@@ -11,6 +11,8 @@ html
     script(src='/javascripts/backbone-min.js')
     script(src='/javascripts/app.js')
   body
+  a(href="http://github.com/dsci/wallieee")
+    img(style="position: absolute; top: 0; right: 0; border: 0;", src="http://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png", alt="Fork me on Github")
   div.container
     != body
    
@@ -25,3 +27,21 @@ html
             div.wallcount
                 <%= total %> messages in the list.   
                 
+    footer
+        div.row
+            div.span8
+                em
+                    | Created at New Year's Eve 2011 and New Year's Day 2012 by Daniel Schmidt.
+            div.span8
+                | using
+                ul.unstyled 
+                    li 
+                        a(href='http://expressjs.com/', title='Express') Express
+                    li 
+                        a(href="http://documentcloud.github.com/backbone/") Backbone.js
+                    li
+                        a(href="http://mongodb.org") MongoDB
+                    li
+                        a(href="http://www.coffeescript.org") CoffeeScript
+                | Sourcecode available at 
+                a(href="http://github.com/dsci/wallieee") Github.
