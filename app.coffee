@@ -32,10 +32,10 @@ app.configure('development', ()->
 app.configure('production', ()->
 	app.use(express.errorHandler())
 	port = ""
-	user = ""
-	pwd = ""
-	host = ""
-	collection = ""
+	user = "wallie"
+	pwd = "123456"
+	host = "staff.mongohq.com"
+	collection = "app2285044"
 	mongo.connect("mongodb://"+user+":"+pwd+"@"+host+":10067/" + collection)
 )
 # Routes
