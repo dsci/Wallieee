@@ -30,8 +30,13 @@ app.configure('development', ()->
 )
 
 app.configure('production', ()->
-	app.use(express.errorHandler()) 
-	mongo.connect("mongodb://wallie:123456@staff.mongohq.com:10067/app2285044")
+	app.use(express.errorHandler())
+	port = ""
+	user = ""
+	pwd = ""
+	host = ""
+	collection = ""
+	mongo.connect("mongodb://"+user+":"+pwd+"@"+host+":10067/" + collection)
 )
 # Routes
 
