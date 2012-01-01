@@ -106,6 +106,7 @@
 
       AppView.prototype.render = function() {
         var post, variables, view, _i, _len, _ref, _results;
+        $('#message').focus();
         variables = {
           total: this.collection.length
         };

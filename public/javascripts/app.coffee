@@ -54,6 +54,7 @@ jQuery ->
 			@render()
 		
 		render: =>
+			$('#message').focus()
 			variables = 
 				total: @collection.length
 			$('#count').html(@countTemplate(variables))
