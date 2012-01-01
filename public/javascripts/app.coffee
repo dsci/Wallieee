@@ -20,9 +20,7 @@ jQuery ->
 	###
 	class WallPostView extends Backbone.View	
 		#template: Handlebars.compile($("#postList").html())
-		#template: '#postList'
 		template: _.template($('#postList').html())
-		#el: '#recents ul'	
 		tagName:  "li"
 		className: "messageRow"
 		
@@ -31,22 +29,14 @@ jQuery ->
 			@render() 
 	
 		render: =>
-			#@addPost(@model)
-			#template = _.template($(@template).html(),{});
-			#$(@el).html(template)
-			#template = _.template($(@template).html())
 			$(@el).html(@template(@model.toJSON()));
 			@setText()
 			@
 			
 		setText: =>
 			text = @model.get('text')
-			#console.log text
 			@$('.walltext').text(text);
 			
-		addPost: (model)->
-			$(@template).append("<li>" + model.get('text') + "</li>")
-	
 	window.WallPostView 	= WallPostView	
 	
 	class AppView extends Backbone.View
@@ -57,7 +47,6 @@ jQuery ->
 			
 		initialize: ->
 			#_.bindAll(@, 'render')
-			#console.log($('#messageForm'))
 			@collection = window.WallPosts 
 			@collection.bind('all', @render, @)
 			@collection.bind('add', @addOne,@)
@@ -65,11 +54,9 @@ jQuery ->
 			@render()
 		
 		render: =>
-			#console.log("I did something!")
 			variables = 
 				total: @collection.length
 			$('#count').html(@countTemplate(variables))
-			#$('#count').html(@countTemplate$('.wallcount').text(@collection.length))
 			$("#recents #recents-list").children().remove()
 			for post in @collection.models
 				view = new WallPostView(model: post)
@@ -82,11 +69,14 @@ jQuery ->
 			else
 				$('#errorAlert').hide()
 				post = @collection.create({text: $('#message').val()})
+				@resetInput()
 			return false;
 			
+		resetInput: ->
+			$('#message').val("")
+			$('#message').focus()
 		addOne: (post) =>
 			view = new WallPostView(model: post)
-			console.log(view.render().el)
 			$("#recents #recents-list").prepend(view.render().el)
 	
 	window.App			= AppView

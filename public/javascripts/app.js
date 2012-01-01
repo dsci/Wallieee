@@ -73,10 +73,6 @@
         return this.$('.walltext').text(text);
       };
 
-      WallPostView.prototype.addPost = function(model) {
-        return $(this.template).append("<li>" + model.get('text') + "</li>");
-      };
-
       return WallPostView;
 
     })();
@@ -136,8 +132,14 @@
           post = this.collection.create({
             text: $('#message').val()
           });
+          this.resetInput();
         }
         return false;
+      };
+
+      AppView.prototype.resetInput = function() {
+        $('#message').val("");
+        return $('#message').focus();
       };
 
       AppView.prototype.addOne = function(post) {
@@ -145,7 +147,6 @@
         view = new WallPostView({
           model: post
         });
-        console.log(view.render().el);
         return $("#recents #recents-list").prepend(view.render().el);
       };
 
